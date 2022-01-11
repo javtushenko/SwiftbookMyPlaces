@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--My Places-->
         <scene sceneID="jsx-ON-Pdz">
             <objects>
                 <tableViewController id="MAh-eV-UJI" customClass="MainViewController" customModule="MyPlaces" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,7 +30,7 @@
                             <outlet property="delegate" destination="MAh-eV-UJI" id="0wD-Z5-y8i"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="geJ-RV-ceb"/>
+                    <navigationItem key="navigationItem" title="My Places" id="geJ-RV-ceb"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mt-Im-dHL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,6 +43,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NZe-Hk-SN3">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="MAh-eV-UJI" kind="relationship" relationship="rootViewController" id="fyn-sE-yry"/>

@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "1625255127_36-kartinkin-com-p-roll-yeda-krasivo-foto-46.jpg",
+      "filename" : "LaunchScreenImg@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "LaunchScreenImg@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "LaunchScreenImg@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
