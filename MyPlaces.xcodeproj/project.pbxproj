@@ -18,6 +18,7 @@
 		F3CF14DE278DC2550090F44E /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CF14DD278DC2550090F44E /* PlaceModel.swift */; };
 		F3E89E41278E8C4B0054DC6B /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E89E40278E8C4A0054DC6B /* NewPlaceViewController.swift */; };
 		F3E89E43278ECE9F0054DC6B /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E89E42278ECE9E0054DC6B /* StorageManager.swift */; };
+		F3E89E45278EE3540054DC6B /* gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F3E89E44278EE3540054DC6B /* gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		F3CF14DD278DC2550090F44E /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		F3E89E40278E8C4A0054DC6B /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
 		F3E89E42278ECE9E0054DC6B /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		F3E89E44278EE3540054DC6B /* gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = gitignore; sourceTree = "<group>"; };
 		F6E9A7BB80159A9BC8CA9B95 /* Pods-MyPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.release.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,7 @@
 				F3E89E42278ECE9E0054DC6B /* StorageManager.swift */,
 				F392AB5E278D97F1000E9ECB /* Assets.xcassets */,
 				F392AB60278D97F1000E9ECB /* LaunchScreen.storyboard */,
+				F3E89E44278EE3540054DC6B /* gitignore */,
 				F392AB63278D97F1000E9ECB /* Info.plist */,
 			);
 			path = MyPlaces;
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F392AB62278D97F1000E9ECB /* LaunchScreen.storyboard in Resources */,
+				F3E89E45278EE3540054DC6B /* gitignore in Resources */,
 				F392AB5F278D97F1000E9ECB /* Assets.xcassets in Resources */,
 				F392AB5D278D97EE000E9ECB /* Main.storyboard in Resources */,
 			);
