@@ -11,8 +11,17 @@ import SwiftUI
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var places: Results<Place>!
-    var ascendingSorting = true
+    private let searchController = UISearchController(searchResultsController: nil)
+    private var places: Results<Place>!
+    private var filteredPlaces: Results<Place>!
+    private var ascendingSorting = true
+    private var searchBarIsEmrty: Bool {
+        guard let text = searchController.searchBar.text else { return false }
+        return text.isEmpty
+    }
+    private var isFiltering: Bool {
+        return searchController.isActive && !searchBarIsEmrty
+    }
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var reversedSortingButton: UIBarButtonItem!
@@ -22,17 +31,40 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         
         places = realm.objects(Place.self)
+        
+        //Setup the SearchController
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Найти"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
+    
+    // MARK: Table View Data Sourse
     
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return places.isEmpty ? 0 : places.count
+         if isFiltering {
+             return filteredPlaces.count
+         } else {
+             return places.isEmpty ? 0 : places.count
+         }
+         
+       
     }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
-        let place = places[indexPath.row]
+         
+         var place = Place()
+         
+         if isFiltering {
+             place = filteredPlaces[indexPath.row]
+         } else {
+             place = places[indexPath.row]
+         }
+         
         
         cell.nameLabel.text = place.name
         cell.locationLabel.text = place.location
@@ -50,7 +82,14 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
      func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            let place = places[indexPath.row]
+            var place = Place()
+            
+            if isFiltering {
+                place = filteredPlaces[indexPath.row]
+            } else {
+                place = places[indexPath.row]
+            }
+            
             StorageManager.deleteObject(place)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
@@ -61,7 +100,15 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            let place = places[indexPath.row]
+            
+            var place = Place()
+            
+            if isFiltering {
+                place = filteredPlaces[indexPath.row]
+            } else {
+                place = places[indexPath.row]
+            }
+            
             let newPlaceVC = segue.destination as! NewPlaceViewController
             newPlaceVC.currentPlace = place
         }
@@ -105,3 +152,21 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 }
 
+// MARK: Search Result Updating
+
+extension MainViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    private func filterContentForSearchText(_ searchText: String){
+        
+        filteredPlaces = places.filter("name CONTAINS[c] %@ OR location CONTAINS[c] %@", searchText, searchText)
+        
+        tableView.reloadData()
+    }
+    
+    
+}
