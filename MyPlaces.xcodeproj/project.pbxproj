@@ -14,6 +14,8 @@
 		F392AB62278D97F1000E9ECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F392AB60278D97F1000E9ECB /* LaunchScreen.storyboard */; };
 		F392AB6A278D9D90000E9ECB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F392AB69278D9D90000E9ECB /* MainViewController.swift */; };
 		F3CF14DC278DBCD80090F44E /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CF14DB278DBCD80090F44E /* CustomTableViewCell.swift */; };
+		F3CF14DE278DC2550090F44E /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CF14DD278DC2550090F44E /* PlaceModel.swift */; };
+		F3E89E41278E8C4B0054DC6B /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E89E40278E8C4A0054DC6B /* NewPlaceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		F392AB63278D97F1000E9ECB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F392AB69278D9D90000E9ECB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F3CF14DB278DBCD80090F44E /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		F3CF14DD278DC2550090F44E /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		F3E89E40278E8C4A0054DC6B /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +65,10 @@
 				F392AB55278D97EE000E9ECB /* AppDelegate.swift */,
 				F392AB57278D97EE000E9ECB /* SceneDelegate.swift */,
 				F392AB69278D9D90000E9ECB /* MainViewController.swift */,
-				F392AB5B278D97EE000E9ECB /* Main.storyboard */,
+				F3E89E40278E8C4A0054DC6B /* NewPlaceViewController.swift */,
 				F3CF14DB278DBCD80090F44E /* CustomTableViewCell.swift */,
+				F392AB5B278D97EE000E9ECB /* Main.storyboard */,
+				F3CF14DD278DC2550090F44E /* PlaceModel.swift */,
 				F392AB5E278D97F1000E9ECB /* Assets.xcassets */,
 				F392AB60278D97F1000E9ECB /* LaunchScreen.storyboard */,
 				F392AB63278D97F1000E9ECB /* Info.plist */,
@@ -142,7 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F392AB6A278D9D90000E9ECB /* MainViewController.swift in Sources */,
+				F3E89E41278E8C4B0054DC6B /* NewPlaceViewController.swift in Sources */,
 				F392AB56278D97EE000E9ECB /* AppDelegate.swift in Sources */,
+				F3CF14DE278DC2550090F44E /* PlaceModel.swift in Sources */,
 				F3CF14DC278DBCD80090F44E /* CustomTableViewCell.swift in Sources */,
 				F392AB58278D97EE000E9ECB /* SceneDelegate.swift in Sources */,
 			);
@@ -297,6 +305,7 @@
 				DEVELOPMENT_TEAM = 9H42AN9X2T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyPlaces/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) photo use";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -327,6 +336,7 @@
 				DEVELOPMENT_TEAM = 9H42AN9X2T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyPlaces/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) photo use";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

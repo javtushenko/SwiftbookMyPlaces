@@ -9,8 +9,9 @@ import UIKit
 
 class MainViewController: UITableViewController {
     
-    let restaurantNames = ["Burger King", "McDonalds", "KFC", "Сушкофф",
-                      "Китайская столовая", "Белый рынок", "Dodo Pizza"]
+
+    
+    let places = Place.getPlaces()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,26 +19,24 @@ class MainViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurantNames.count
+        return places.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
         
-        cell.nameLabel.text = restaurantNames[indexPath.row]
+        cell.nameLabel.text = places[indexPath.row].name
+        cell.locationLabel.text = places[indexPath.row].location
+        cell.typeLabel.text = places[indexPath.row].type
         
-        cell.imageRestaurant.image = UIImage(named: restaurantNames[indexPath.row])
+        cell.imageRestaurant.image = UIImage(named: places[indexPath.row].name)
         cell.imageRestaurant.layer.cornerRadius = cell.widthOfImageRestaurant.constant / 2
         cell.imageRestaurant.clipsToBounds = true
         
         return cell
     }
-
-    // MARK: - Table View Delegate
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
-    }
+
 
     /*
     // MARK: - Navigation
@@ -49,4 +48,6 @@ class MainViewController: UITableViewController {
     }
     */
 
+    @IBAction func cancel(_ segue: UIStoryboardSegue) { }
+    
 }
