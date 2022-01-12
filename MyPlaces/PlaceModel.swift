@@ -5,32 +5,24 @@
 //  Created by Николай Явтушенко on 11.01.2022.
 //
 
-import UIKit
+import RealmSwift
 
-struct Place {
+class Place: Object {
     
-    var name: String
-    var location: String?
-    var type: String?
-    var image: UIImage?
-    var restaurantImage: String?
+    @objc dynamic var name = ""
+    @objc dynamic var location: String?
+    @objc dynamic var type: String?
+    @objc dynamic var imageData: Data?
     
-    
-    
-    static let restaurantNames = ["Burger King", "McDonalds", "KFC", "Сушкофф",
-                           "Китайская столовая", "Белый рынок", "Dodo Pizza"]
-    
-    static func getPlaces() -> [Place] {
-        
-        var places = [Place]()
-        
-        for place in restaurantNames {
-            places.append(Place(name: place, location: "Челябинск", type: "Ресторан", image: nil, restaurantImage: place))
-        }
-        
-        return places
+    convenience init(name: String,
+                     location: String?,
+                     type: String?,
+                     imageData: Data?) {
+        self.init()
+        self.name = name
+        self.location = location
+        self.type = type
+        self.imageData = imageData
     }
-    
-    
     
 }
