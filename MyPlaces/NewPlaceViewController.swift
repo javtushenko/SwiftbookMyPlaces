@@ -62,26 +62,23 @@ class NewPlaceViewController: UITableViewController {
     func saveNewPlace() {
 
         var image = placeImage.image
-        
         if imageIsChanged == false {
             image = UIImage(named: "imagePlaceholder")
         }
         
         let imageData = image?.pngData()
-        
-        let newPlace = Place(name: placeType.text!,
+        let newPlace = Place(name: placeName.text!,
                              location: placeLocation.text,
                              type: placeType.text,
                              imageData: imageData)
         
         StorageManager.saveObject(newPlace)
-        
     }
     
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
+        
         dismiss(animated: true, completion: nil)
     }
-    
 }
 
 // MARK: Text Field Delegate
@@ -100,7 +97,6 @@ extension NewPlaceViewController: UITextFieldDelegate {
             saveButton.isEnabled = false
         }
     }
-    
 }
 
 // MARK: Work with image
@@ -120,11 +116,11 @@ extension NewPlaceViewController: UIImagePickerControllerDelegate, UINavigationC
     
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
         placeImage.image = info[.editedImage] as? UIImage
         placeImage.contentMode = .scaleAspectFill
         placeImage.clipsToBounds = true
         imageIsChanged = true
         dismiss(animated: true, completion: nil)
     }
-    
 }
