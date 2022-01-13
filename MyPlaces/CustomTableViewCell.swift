@@ -15,4 +15,6 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var imageRestaurant: UIImageView!
     @IBOutlet weak var widthOfImageRestaurant: NSLayoutConstraint!
     
+    @IBOutlet var stars: [UIImageView]!
+    
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6C883A2421A37F9EE189E696 /* Pods_MyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90E62EBF41A884F555D0941 /* Pods_MyPlaces.framework */; };
+		F31D915D279016A8006178DA /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31D915C279016A8006178DA /* RatingControl.swift */; };
 		F392AB56278D97EE000E9ECB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F392AB55278D97EE000E9ECB /* AppDelegate.swift */; };
 		F392AB58278D97EE000E9ECB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F392AB57278D97EE000E9ECB /* SceneDelegate.swift */; };
 		F392AB5D278D97EE000E9ECB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F392AB5B278D97EE000E9ECB /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		B90E62EBF41A884F555D0941 /* Pods_MyPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C198316EB7CF0EF7CF030E /* Pods-MyPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.debug.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.debug.xcconfig"; sourceTree = "<group>"; };
+		F31D915C279016A8006178DA /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		F392AB52278D97EE000E9ECB /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F392AB55278D97EE000E9ECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F392AB57278D97EE000E9ECB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				F392AB69278D9D90000E9ECB /* MainViewController.swift */,
 				F3E89E40278E8C4A0054DC6B /* NewPlaceViewController.swift */,
 				F3CF14DB278DBCD80090F44E /* CustomTableViewCell.swift */,
+				F31D915C279016A8006178DA /* RatingControl.swift */,
 				F392AB5B278D97EE000E9ECB /* Main.storyboard */,
 				F3CF14DD278DC2550090F44E /* PlaceModel.swift */,
 				F3E89E42278ECE9E0054DC6B /* StorageManager.swift */,
@@ -222,6 +225,7 @@
 				F3E89E41278E8C4B0054DC6B /* NewPlaceViewController.swift in Sources */,
 				F392AB56278D97EE000E9ECB /* AppDelegate.swift in Sources */,
 				F3E89E43278ECE9F0054DC6B /* StorageManager.swift in Sources */,
+				F31D915D279016A8006178DA /* RatingControl.swift in Sources */,
 				F3CF14DE278DC2550090F44E /* PlaceModel.swift in Sources */,
 				F3CF14DC278DBCD80090F44E /* CustomTableViewCell.swift in Sources */,
 				F392AB58278D97EE000E9ECB /* SceneDelegate.swift in Sources */,

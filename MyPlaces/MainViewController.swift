@@ -40,6 +40,14 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         definesPresentationContext = true
     }
     
+    // MARK: Implication rating stars view
+    
+    func ratingStarsView() {
+        
+        
+        
+    }
+    
     // MARK: Table View Data Sourse
     
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,8 +72,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
          } else {
              place = places[indexPath.row]
          }
-         
-        
+                 
         cell.nameLabel.text = place.name
         cell.locationLabel.text = place.location
         cell.typeLabel.text = place.type
@@ -73,11 +80,27 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         cell.imageRestaurant.layer.cornerRadius = cell.widthOfImageRestaurant.constant / 2
         cell.imageRestaurant.clipsToBounds = true
+         
+         let rating = Int(place.rating)
+         let haveStar = UIImage(named: "highlightedStar")
+         let noHaveStar = UIImage(named: "emptyStar")
+         
+         for index in 0...cell.stars.count-1{
+             if index < rating {
+                 cell.stars[index].image = haveStar
+             } else {
+                 cell.stars[index].image = noHaveStar
+             }
+         }
         
         return cell
     }
     
     // MARK: - Table View Delegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
      func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
