@@ -7,11 +7,14 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController {
     
     var place = Place()
     let annotationIdentifier = "annotationIdentifier"
+    let locationManager = CLLocationManager()
+    let regionInMeters = 10000.0
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -19,6 +22,17 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         mapView.delegate = self
         setupPlacemark()
+        checkLocationServices()
+    }
+    
+    @IBAction func centerViewInUserLocation() {
+        
+        if let location = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion(center: location,
+                                            latitudinalMeters: regionInMeters,
+                                            longitudinalMeters: regionInMeters)
+            mapView.setRegion(region, animated: true)
+        }
     }
     
     @IBAction func closeVC() {
@@ -55,7 +69,59 @@ class MapViewController: UIViewController {
         }
     }
     
+    // MARK: Check Location
+    
+    private func checkLocationServices() {
+        
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+            checkLocationAuthorization()
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.showAlert(title: "Службы геолокации выключены",
+                               message: "Пожалуйста, включите их в настройках")
+            }
+        }
+    }
+    
+    private func setupLocationManager() {
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    private func checkLocationAuthorization() {
+        
+        switch locationManager.authorizationStatus {
+        case .authorizedWhenInUse :
+            mapView.showsUserLocation = true
+            break
+        case .denied, .restricted :
+            self.showAlert(title: "Службы геолокации выключены",
+                           message: "Пожалуйста, включите их в настройках")
+            break
+        case .notDetermined :
+            locationManager.requestWhenInUseAuthorization()
+        case .authorizedAlways :
+            break
+        @unknown default:
+            print("New case is available")
+        }
+        
+    }
+    
+    private func showAlert(title: String, message: String) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertDone = UIAlertAction(title: "OK", style: .default)
+        
+        alert.addAction(alertDone)
+        present(alert, animated: true)
+    }
+    
 }
+
+// MARK: Map View Delegate
 
 extension MapViewController: MKMapViewDelegate {
     
@@ -79,4 +145,12 @@ extension MapViewController: MKMapViewDelegate {
         }
         return annotationView
     }
+}
+
+extension MapViewController: CLLocationManagerDelegate {
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        checkLocationAuthorization()
+    }
+    
 }
