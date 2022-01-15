@@ -328,32 +328,67 @@
                                     <action selector="doneButtonPressed" destination="Ni5-oH-0WM" eventType="touchUpInside" id="sSi-BE-tC5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQK-vL-yuM">
+                                <rect key="frame" x="185" y="752" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="68z-bA-BCz"/>
+                                    <constraint firstAttribute="width" constant="50" id="ZD2-3R-QGX"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="location.viewfinder" catalog="system"/>
+                                <connections>
+                                    <action selector="goButtonPressed:" destination="Ni5-oH-0WM" eventType="touchUpInside" id="G97-Ol-Ieb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Растояние" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iOK-5d-Mnb">
+                                <rect key="frame" x="20" y="149" width="374" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время в пути" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FSw-zR-wEt">
+                                <rect key="frame" x="20" y="189" width="374" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fnk-eO-OdP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4uk-XS-yCJ" firstAttribute="centerY" secondItem="8rL-sU-J2h" secondAttribute="centerY" constant="-20" id="4iO-JH-S6Y"/>
+                            <constraint firstItem="iOK-5d-Mnb" firstAttribute="top" secondItem="vWr-9N-yhX" secondAttribute="bottom" constant="25" id="51v-RY-sZv"/>
                             <constraint firstItem="Fnk-eO-OdP" firstAttribute="trailing" secondItem="hcs-yD-E2E" secondAttribute="trailing" constant="20" id="5Wm-gf-uWg"/>
                             <constraint firstItem="Fnk-eO-OdP" firstAttribute="bottom" secondItem="IX7-BQ-kSO" secondAttribute="bottom" constant="55" id="7Aq-tk-K5E"/>
                             <constraint firstAttribute="trailing" secondItem="G22-FL-CFP" secondAttribute="trailing" id="7zS-Iq-rXv"/>
                             <constraint firstItem="hcs-yD-E2E" firstAttribute="top" secondItem="Fnk-eO-OdP" secondAttribute="top" constant="150" id="B8C-on-tGx"/>
                             <constraint firstItem="4uk-XS-yCJ" firstAttribute="centerX" secondItem="8rL-sU-J2h" secondAttribute="centerX" id="BJG-HJ-ysL"/>
+                            <constraint firstItem="iOK-5d-Mnb" firstAttribute="leading" secondItem="Fnk-eO-OdP" secondAttribute="leading" constant="20" id="Dw5-MI-iYX"/>
+                            <constraint firstItem="FSw-zR-wEt" firstAttribute="top" secondItem="iOK-5d-Mnb" secondAttribute="bottom" constant="10" id="IHK-ua-wbq"/>
                             <constraint firstAttribute="bottom" secondItem="G22-FL-CFP" secondAttribute="bottom" id="Jkz-9T-kzS"/>
+                            <constraint firstItem="dQK-vL-yuM" firstAttribute="leading" secondItem="Fnk-eO-OdP" secondAttribute="leading" constant="185" id="Ktq-3Q-a9U"/>
                             <constraint firstItem="Fnk-eO-OdP" firstAttribute="bottom" secondItem="SeG-ol-sxv" secondAttribute="bottom" constant="55" id="LHI-3o-UcB"/>
                             <constraint firstItem="IX7-BQ-kSO" firstAttribute="centerX" secondItem="8rL-sU-J2h" secondAttribute="centerX" id="MId-O9-zl9"/>
+                            <constraint firstItem="Fnk-eO-OdP" firstAttribute="trailing" secondItem="iOK-5d-Mnb" secondAttribute="trailing" constant="20" id="Odq-bl-xg9"/>
+                            <constraint firstItem="FSw-zR-wEt" firstAttribute="leading" secondItem="Fnk-eO-OdP" secondAttribute="leading" constant="20" id="PP5-wi-tQA"/>
                             <constraint firstItem="G22-FL-CFP" firstAttribute="top" secondItem="8rL-sU-J2h" secondAttribute="top" id="ShX-pC-YwA"/>
                             <constraint firstItem="hcs-yD-E2E" firstAttribute="leading" secondItem="Fnk-eO-OdP" secondAttribute="leading" constant="20" id="fir-wf-8I7"/>
                             <constraint firstItem="G22-FL-CFP" firstAttribute="leading" secondItem="Fnk-eO-OdP" secondAttribute="leading" id="jH9-NI-0B3"/>
                             <constraint firstItem="vWr-9N-yhX" firstAttribute="top" secondItem="Fnk-eO-OdP" secondAttribute="top" constant="40" id="kMA-AA-FeP"/>
                             <constraint firstItem="Fnk-eO-OdP" firstAttribute="trailing" secondItem="vWr-9N-yhX" secondAttribute="trailing" constant="40" id="kdw-oA-gGx"/>
+                            <constraint firstItem="Fnk-eO-OdP" firstAttribute="bottom" secondItem="dQK-vL-yuM" secondAttribute="bottom" constant="60" id="mEj-OW-xbp"/>
+                            <constraint firstItem="Fnk-eO-OdP" firstAttribute="trailing" secondItem="FSw-zR-wEt" secondAttribute="trailing" constant="20" id="n21-cq-3AM"/>
                             <constraint firstItem="Fnk-eO-OdP" firstAttribute="trailing" secondItem="SeG-ol-sxv" secondAttribute="trailing" constant="40" id="pz0-3q-zJg"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="hcs-yD-E2E" id="lMs-Rl-fgd"/>
+                        <outlet property="distanceLable" destination="iOK-5d-Mnb" id="rrm-qN-8Pf"/>
                         <outlet property="doneButton" destination="IX7-BQ-kSO" id="ggS-zZ-x5f"/>
+                        <outlet property="getDirection" destination="dQK-vL-yuM" id="bn1-aU-PzA"/>
                         <outlet property="mapPinImage" destination="4uk-XS-yCJ" id="zfc-wL-0bs"/>
                         <outlet property="mapView" destination="G22-FL-CFP" id="vUm-gY-nm1"/>
+                        <outlet property="timeIntervalLabel" destination="FSw-zR-wEt" id="aIH-Sr-WN5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGC-Hb-2Qg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -568,6 +603,7 @@
         <image name="Photo" width="195" height="196"/>
         <image name="location.fill" catalog="system" width="128" height="121"/>
         <image name="location.magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="location.viewfinder" catalog="system" width="128" height="115"/>
         <image name="mappin.square" catalog="system" width="128" height="114"/>
         <image name="pin.fill" catalog="system" width="119" height="128"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
