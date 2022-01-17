@@ -10,6 +10,7 @@
 		6C883A2421A37F9EE189E696 /* Pods_MyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90E62EBF41A884F555D0941 /* Pods_MyPlaces.framework */; };
 		F31D915D279016A8006178DA /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31D915C279016A8006178DA /* RatingControl.swift */; };
 		F34AA1FB2791755000D51C20 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34AA1FA2791755000D51C20 /* MapViewController.swift */; };
+		F34AA1FD2792D94D00D51C20 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34AA1FC2792D94D00D51C20 /* MapManager.swift */; };
 		F392AB56278D97EE000E9ECB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F392AB55278D97EE000E9ECB /* AppDelegate.swift */; };
 		F392AB58278D97EE000E9ECB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F392AB57278D97EE000E9ECB /* SceneDelegate.swift */; };
 		F392AB5D278D97EE000E9ECB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F392AB5B278D97EE000E9ECB /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		D8C198316EB7CF0EF7CF030E /* Pods-MyPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.debug.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.debug.xcconfig"; sourceTree = "<group>"; };
 		F31D915C279016A8006178DA /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		F34AA1FA2791755000D51C20 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		F34AA1FC2792D94D00D51C20 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		F392AB52278D97EE000E9ECB /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F392AB55278D97EE000E9ECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F392AB57278D97EE000E9ECB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,55 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F34AA1FE2792E61900D51C20 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F392AB69278D9D90000E9ECB /* MainViewController.swift */,
+				F3E89E40278E8C4A0054DC6B /* NewPlaceViewController.swift */,
+				F34AA1FA2791755000D51C20 /* MapViewController.swift */,
+				F3CF14DB278DBCD80090F44E /* CustomTableViewCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F34AA2002792E66600D51C20 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3CF14DD278DC2550090F44E /* PlaceModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F34AA2012792E67500D51C20 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F34AA1FC2792D94D00D51C20 /* MapManager.swift */,
+				F3E89E42278ECE9E0054DC6B /* StorageManager.swift */,
+				F31D915C279016A8006178DA /* RatingControl.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F34AA2022792E6A400D51C20 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F392AB55278D97EE000E9ECB /* AppDelegate.swift */,
+				F392AB57278D97EE000E9ECB /* SceneDelegate.swift */,
+				F392AB5E278D97F1000E9ECB /* Assets.xcassets */,
+				F392AB63278D97F1000E9ECB /* Info.plist */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		F34AA2032792E6CF00D51C20 /* IBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				F392AB5B278D97EE000E9ECB /* Main.storyboard */,
+				F392AB60278D97F1000E9ECB /* LaunchScreen.storyboard */,
+			);
+			path = IBuilder;
+			sourceTree = "<group>";
+		};
 		F392AB49278D97EE000E9ECB = {
 			isa = PBXGroup;
 			children = (
@@ -92,19 +143,11 @@
 		F392AB54278D97EE000E9ECB /* MyPlaces */ = {
 			isa = PBXGroup;
 			children = (
-				F392AB55278D97EE000E9ECB /* AppDelegate.swift */,
-				F392AB57278D97EE000E9ECB /* SceneDelegate.swift */,
-				F392AB69278D9D90000E9ECB /* MainViewController.swift */,
-				F3E89E40278E8C4A0054DC6B /* NewPlaceViewController.swift */,
-				F3CF14DB278DBCD80090F44E /* CustomTableViewCell.swift */,
-				F31D915C279016A8006178DA /* RatingControl.swift */,
-				F34AA1FA2791755000D51C20 /* MapViewController.swift */,
-				F392AB5B278D97EE000E9ECB /* Main.storyboard */,
-				F3CF14DD278DC2550090F44E /* PlaceModel.swift */,
-				F3E89E42278ECE9E0054DC6B /* StorageManager.swift */,
-				F392AB5E278D97F1000E9ECB /* Assets.xcassets */,
-				F392AB60278D97F1000E9ECB /* LaunchScreen.storyboard */,
-				F392AB63278D97F1000E9ECB /* Info.plist */,
+				F34AA1FE2792E61900D51C20 /* ViewControllers */,
+				F34AA2012792E67500D51C20 /* Helpers */,
+				F34AA2002792E66600D51C20 /* Models */,
+				F34AA2022792E6A400D51C20 /* Support Files */,
+				F34AA2032792E6CF00D51C20 /* IBuilder */,
 			);
 			path = MyPlaces;
 			sourceTree = "<group>";
@@ -230,6 +273,7 @@
 				F3E89E43278ECE9F0054DC6B /* StorageManager.swift in Sources */,
 				F34AA1FB2791755000D51C20 /* MapViewController.swift in Sources */,
 				F31D915D279016A8006178DA /* RatingControl.swift in Sources */,
+				F34AA1FD2792D94D00D51C20 /* MapManager.swift in Sources */,
 				F3CF14DE278DC2550090F44E /* PlaceModel.swift in Sources */,
 				F3CF14DC278DBCD80090F44E /* CustomTableViewCell.swift in Sources */,
 				F392AB58278D97EE000E9ECB /* SceneDelegate.swift in Sources */,
@@ -383,9 +427,10 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "MyPlaces/Support\\ Files/Assets.xcassets";
 				DEVELOPMENT_TEAM = 9H42AN9X2T;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyPlaces/Info.plist;
+				INFOPLIST_FILE = "MyPlaces/Support Files/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "MyPlaces photo use";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Чтобы проложить маршрут";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -416,9 +461,10 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "MyPlaces/Support\\ Files/Assets.xcassets";
 				DEVELOPMENT_TEAM = 9H42AN9X2T;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyPlaces/Info.plist;
+				INFOPLIST_FILE = "MyPlaces/Support Files/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "MyPlaces photo use";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Чтобы проложить маршрут";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

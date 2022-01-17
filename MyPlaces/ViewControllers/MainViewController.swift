@@ -57,8 +57,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
          } else {
              return places.isEmpty ? 0 : places.count
          }
-         
-       
     }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
