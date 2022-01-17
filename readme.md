@@ -10,16 +10,16 @@
 Можно сортировать заведения по дате добавления и по имени. <br>
 Предусмотрен поиск по добавленным заведениям.
 
-![Image alt](https://github.com/javtushenko/myplaces/raw/main/myplaces/1.png)
+![Image alt](https://github.com/javtushenko/MyPlaces/blob/main/MyPlaces/1.PNG)
 
 При нажатии на заведение выполняется переход на другой экран с возможностью редактирования заведения.<br>
 
-![Image alt](https://github.com/javtushenko/myplaces/raw/main/myplaces/2.png)
+![Image alt](https://github.com/javtushenko/MyPlaces/blob/main/MyPlaces/2.PNG)
 
 При нажатии на кнопку с картой, приложение построит маршрут до заведения.<br>
 Местоположение заведения можно выбрать на карте, адрес в поле впишется исходя из отмеченной точки.
 
-![Image alt](https://github.com/javtushenko/myplaces/raw/main/myplaces/3.png)
+![Image alt](https://github.com/javtushenko/MyPlaces/blob/main/MyPlaces/3.PNG)
 
 Все данные сохраняются в базу данных Realm.<br>
 Система отображения и установки рейтинга написана самостоятельно, без применения готового фреймворка.<br>
