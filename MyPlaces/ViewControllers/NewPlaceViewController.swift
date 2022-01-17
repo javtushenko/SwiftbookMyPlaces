@@ -19,8 +19,6 @@ class NewPlaceViewController: UITableViewController {
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var ratingControl: RatingControl!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,7 +32,6 @@ class NewPlaceViewController: UITableViewController {
     }
     
     // MARK: Table View Delegate
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             
@@ -68,7 +65,6 @@ class NewPlaceViewController: UITableViewController {
     }
     
     // MARK: Navigation
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         guard let identifier = segue.identifier,
@@ -88,6 +84,7 @@ class NewPlaceViewController: UITableViewController {
         
     }
     
+    // Сохранение данных о заведении
     func savePlace() {
         
         let image = imageIsChanged ? placeImage.image : UIImage(named: "imagePlaceholder")
@@ -112,6 +109,7 @@ class NewPlaceViewController: UITableViewController {
         }
     }
     
+    // Настройка экрана редактирования заведения
     private func  setupEditScreen() {
         
         if currentPlace != nil {
@@ -131,6 +129,7 @@ class NewPlaceViewController: UITableViewController {
         }
     }
     
+    // Настройка Navigation Bar
     private func setupNavigationBar() {
         
         if let topItem = navigationController?.navigationBar.topItem {
@@ -166,7 +165,7 @@ extension NewPlaceViewController: UITextFieldDelegate {
     }
 }
 
-// MARK: Work with image
+// MARK: Работа с изображениями
 
 extension NewPlaceViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

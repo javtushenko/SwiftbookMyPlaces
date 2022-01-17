@@ -9,6 +9,7 @@ import RealmSwift
 
 let realm = try! Realm()
 
+// Класс для работы Realm
 class StorageManager {
     
     static func saveObject(_ place: Place) {

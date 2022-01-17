@@ -133,7 +133,7 @@ class MapManager {
                 
                 timeIntervalLabel.isHidden = false
                 distanceLable.isHidden = false
-
+                
                 timeIntervalLabel.text = ("Время в пути \(timeInerval) мин")
                 distanceLable.text = ("До точки \(distance) км")
             }
@@ -158,8 +158,8 @@ class MapManager {
     
     // Меняем отображаемую зону карты в соответствии с перемещением пользователя
     func startTrackingUserLocation(for mapView: MKMapView,
-                                           and location: CLLocation?,
-                                           closure: (_ currentLocation: CLLocation) -> ()) {
+                                   and location: CLLocation?,
+                                   closure: (_ currentLocation: CLLocation) -> ()) {
         
         guard let location = location else { return }
         let center = getCenterLocation(for: mapView)

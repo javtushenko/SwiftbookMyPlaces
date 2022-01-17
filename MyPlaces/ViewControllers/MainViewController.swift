@@ -32,7 +32,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         places = realm.objects(Place.self)
         
-        //Setup the SearchController
+        //Настройка Search Controller
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Найти"
@@ -40,37 +40,29 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         definesPresentationContext = true
     }
     
-    // MARK: Implication rating stars view
-    
-    func ratingStarsView() {
-        
-        
-        
-    }
-    
     // MARK: Table View Data Sourse
     
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-         if isFiltering {
-             return filteredPlaces.count
-         } else {
-             return places.isEmpty ? 0 : places.count
-         }
+        if isFiltering {
+            return filteredPlaces.count
+        } else {
+            return places.isEmpty ? 0 : places.count
+        }
     }
     
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
-         
-         var place = Place()
-         
-         if isFiltering {
-             place = filteredPlaces[indexPath.row]
-         } else {
-             place = places[indexPath.row]
-         }
-                 
+        
+        var place = Place()
+        
+        if isFiltering {
+            place = filteredPlaces[indexPath.row]
+        } else {
+            place = places[indexPath.row]
+        }
+        
         cell.nameLabel.text = place.name
         cell.locationLabel.text = place.location
         cell.typeLabel.text = place.type
@@ -78,19 +70,18 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         cell.imageRestaurant.layer.cornerRadius = cell.widthOfImageRestaurant.constant / 2
         cell.imageRestaurant.clipsToBounds = true
-         
-         let rating = Int(place.rating)
-         let haveStar = UIImage(named: "highlightedStar")
-         let noHaveStar = UIImage(named: "emptyStar")
-         
-         for index in 0...cell.stars.count-1{
-             if index < rating {
-                 cell.stars[index].image = haveStar
-             } else {
-                 cell.stars[index].image = noHaveStar
-             }
-         }
         
+        let rating = Int(place.rating)
+        let haveStar = UIImage(named: "highlightedStar")
+        let noHaveStar = UIImage(named: "emptyStar")
+        
+        for index in 0...cell.stars.count-1{
+            if index < rating {
+                cell.stars[index].image = haveStar
+            } else {
+                cell.stars[index].image = noHaveStar
+            }
+        }
         return cell
     }
     
@@ -100,7 +91,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
             var place = Place()
@@ -142,7 +133,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.reloadData()
     }
     
-    // MARK: Sorting data
+    // MARK: Сортировка данных
     
     @IBAction func sortSelection(_ sender: UISegmentedControl) {
         

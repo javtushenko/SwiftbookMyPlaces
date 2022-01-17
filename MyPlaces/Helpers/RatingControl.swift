@@ -43,7 +43,7 @@ class RatingControl: UIStackView {
         
         guard let index = ratingButtons.firstIndex(of: button) else { return }
         
-        // Calculate the rating of the selected button
+        // Вычисляем рейтинг в зависимости от нажатой кнопки
         
         let selectedRaiting = index + 1
         
@@ -60,7 +60,7 @@ class RatingControl: UIStackView {
     
     private func setupButtons() {
         
-        // Load button image
+        // Загружаем изображения кнопок
         let filledStar = UIImage(named: "filledStar")
         let emptyStar = UIImage(named: "emptyStar")
         let highlightedStar = UIImage(named: "highlightedStar")
@@ -69,27 +69,27 @@ class RatingControl: UIStackView {
         
         for _ in 0..<starCount {
             
-            // Create the button
+            // Создаем кнопку
             let button = UIButton()
             
-            // Set the button image
+            // Устанавливаем изображение кнопки в зависимости от состояния
             button.setImage(emptyStar, for: .normal)
             button.setImage(filledStar, for: .selected)
             button.setImage(highlightedStar, for: .highlighted)
             button.setImage(highlightedStar, for: [.highlighted, .selected])
             
-            // Add constraints
+            // Добавляем констрейнты
             button.translatesAutoresizingMaskIntoConstraints = false
             button.heightAnchor.constraint(equalToConstant: starSize.height).isActive = true
             button.widthAnchor.constraint(equalToConstant: starSize.width).isActive = true
             
-            // Setup the button action
+            // Задаем action кнопки
             button.addTarget(self, action: #selector(ratingButtonTapped(button:)), for: .touchUpInside)
             
-            // Add the button to the stak
+            // Добавляем кнопку в Stack View
             addArrangedSubview(button)
             
-            // Add the button on the rating button array
+            // Добавляем кнопку в массив
             ratingButtons.append(button)
         }
         updateButtonSelectionState()
